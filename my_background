@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source my_functions
+source my_variables
+
+my_requirements 'hsetroot' || exit
+
+hsetroot -solid "$my_inactive_bg"

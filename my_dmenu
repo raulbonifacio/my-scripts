@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source my_functions
+source my_variables
+
+my_requirements 'dmenu' || exit
+
+screen_width=$(my_screen_width)
+
+dmenu \
+	-x "$my_padding_size" \
+	-y "$my_padding_size" \
+	-z "$(($screen_width - $my_padding_size * 2 ))" \
+	-fn "$my_font" \
+	-nf "$my_inactive_fg" \
+	-nb "$my_inactive_bg" \
+	-sf "$my_active_bg" \
+	-sb "$my_active_fg" \
+	-bw "$my_border_size" \
+	"$@"

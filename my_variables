@@ -1,0 +1,15 @@
+#!/bin/bash
+
+source ~/.cache/wal/colors.sh
+
+white='#ffffff'
+black='#000000'
+
+my_font='Terminus (TTF)'
+my_font_size=12
+my_active_bg=${color0:-$black}
+my_active_fg=${color5:-$white}
+my_inactive_bg=${color0:-$white}
+my_inactive_fg=${color7:-$black}
+my_border_size=3
+my_padding_size=10

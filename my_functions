@@ -1,0 +1,28 @@
+#!/bin/bash
+
+function my_requirements { 
+
+	local missing=0
+
+	for requirement in "$@"
+	do
+		command -v "$requirement" > /dev/null || { 
+			printf "'%s' is missing.\n" "$requirement" 
+			missing=1
+		}
+	done
+
+	return "$missing"
+}
+
+function my_screen_width { 
+	xdpyinfo | grep "dimensions"  | cut -d " " -f 7  | cut -d "x" -f 1
+}
+
+function my_screen_height { 
+	xdpyinfo | grep "dimensions"  | cut -d " " -f 7  | cut -d "x" -f 1
+}
+
+function my_volume { 
+	amixer get Master  | grep "Right:\|Left:" | tail -n 1 | cut -d ' ' -f 7 | tr -d '[]'
+}
