@@ -5,7 +5,7 @@ source my_variables
 
 my_requirements 'dunst' || exit
 
-config=$(mktemp)
+config=$(my_config_for 'notifications')
 
 cat > "$config" <<EOF
 # See dunst(5) for all configuration options

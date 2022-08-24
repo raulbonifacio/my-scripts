@@ -15,6 +15,12 @@ function my_requirements {
 	return "$missing"
 }
 
+function my_config_for { 
+	local config="/tmp/my_$1_config"
+	test -e "$config" || touch "$config"
+	printf "%s\n" "$config"
+}
+
 function my_screen_width { 
 	xdpyinfo | grep "dimensions"  | cut -d " " -f 7  | cut -d "x" -f 1
 }
@@ -24,5 +30,6 @@ function my_screen_height {
 }
 
 function my_volume { 
-	amixer get Master  | grep "Right:\|Left:" | tail -n 1 | cut -d ' ' -f 7 | tr -d '[]'
+	amixer get Master  | grep -m 1 "Right:\|Left:" | cut -d ' ' -f 7 | tr -d '[]'
 }
+

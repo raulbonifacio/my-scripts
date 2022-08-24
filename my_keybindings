@@ -5,7 +5,7 @@ source my_variables
 
 my_requirements 'sxhkd' || exit
 
-config=$(mktemp)
+config=$(my_config_for 'keybindings')
 
 cat > "$config" <<EOF
 
@@ -20,24 +20,22 @@ alt + g; r
 	xfce4-appfinder
 
 alt + g; p 
-	scrot -s -f - | xclip -selection clipboard -t image/png -i 
+	scrot -s -j - | xclip -selection clipboard -t image/png -i 
 
 
 #								 VOLUME CONTROL
 
 # Toggle mute
 XF86AudioMute
-	amixer -D pulse set Master 1+ toggle
+	amixer -q -D pulse set Master 1+ toggle
 
 # Raise volume
 XF86AudioRaiseVolume
-	amixer set Master 5%+
+	amixer -q set Master 5%+
 
 # Lower volume
 XF86AudioLowerVolume
-	amixer set Master 5%-
-
-
+	amixer -q set Master 5%-
 
 
 #							   BSPWM KEYBINDINGS 

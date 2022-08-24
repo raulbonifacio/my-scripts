@@ -5,9 +5,9 @@ source my_variables
 
 my_requirements 'picom' || exit
 
-config=$(mktemp)
+config=$(my_config_for 'compositor')
 
-cat  > "$config" <<EOF
+cat > "$config" <<EOF
 
 #################################
 #             Shadows           #
