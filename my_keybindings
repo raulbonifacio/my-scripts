@@ -17,7 +17,7 @@ alt + F1
 
 # Open application finder collapsed
 alt + g; r
-	xfce4-appfinder
+	my_dmenu_run
 
 alt + g; p 
 	scrot -s -j - | xclip -selection clipboard -t image/png -i 
@@ -80,4 +80,5 @@ alt + w; q
 
 EOF
 
-sxhkd -c "$config"
+pgrep -f sxhkd > /dev/null || sxhkd -c "$config" &
+pgrep sxhkd | xargs kill -s 10

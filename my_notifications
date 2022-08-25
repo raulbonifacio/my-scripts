@@ -446,4 +446,6 @@ cat > "$config" <<EOF
 
 EOF
 
-dunst -config "$config"
+pkill dunst
+
+dunst -config "$config" &

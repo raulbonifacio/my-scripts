@@ -1,8 +1,8 @@
 #!/bin/bash
 
-pgrep -f my_compositor > /dev/null || my_compositor &
-pgrep -f my_keybindings > /dev/null || my_keybindings &
-pgrep -f my_notifications > /dev/null || my_notifications &
 my_bspwm
 my_background
 my_keyboard_layouts
+my_compositor
+my_keybindings
+my_notifications

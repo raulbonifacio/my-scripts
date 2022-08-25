@@ -425,4 +425,4 @@ wintypes:
 
 EOF
 
-picom --experimental-backends
+pgrep -f picom > /dev/null || picom --experimental-backends  --config "$config" & 

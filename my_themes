@@ -1,0 +1,24 @@
+#!/bin/bash
+
+source my_functions
+source my_variables
+
+my_requirements 'my_dmenu' 'my_config' 'wal'
+
+function theme_list { 
+	wal --theme  | grep '-' | sort -u | cut -d ' ' -f 3 | nl -s ' ' -n 'rz' -v 0 
+}
+
+theme_index=0
+
+while :
+do
+	selection=$(theme_list | my_dmenu -p 'Select theme:' -l 15 -n "$theme_index")
+	test "$?" -ne 0 && break
+
+	theme_index=${selection%% *}
+	theme_name=${selection##* }
+
+	wal --theme "$theme_name" > /dev/null
+	my_config
+done
