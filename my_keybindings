@@ -19,8 +19,12 @@ alt + F1
 alt + g; r
 	my_dmenu_run
 
+# Change my current theme
+alt + g; t
+	my_themes
+
 alt + g; p 
-	scrot -s -j - | xclip -selection clipboard -t image/png -i 
+	scrot -s -f - | xclip -selection clipboard -t image/png -i 
 
 
 #								 VOLUME CONTROL
@@ -80,5 +84,6 @@ alt + w; q
 
 EOF
 
-pgrep -f sxhkd > /dev/null || sxhkd -c "$config" &
+pgrep sxhkd > /dev/null || sxhkd -c "$config" &
+
 pgrep sxhkd | xargs kill -s 10
