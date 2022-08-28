@@ -84,6 +84,9 @@ alt + w; q
 
 EOF
 
-pgrep sxhkd > /dev/null || sxhkd -c "$config" &
-
-pgrep sxhkd | xargs kill -s 10
+if pgrep sxhkd > /dev/null
+then
+	pgrep sxhkd | xargs kill -s 10
+else
+	pgrep sxhkd > /dev/null || sxhkd -c "$config" &
+fi

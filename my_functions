@@ -33,3 +33,10 @@ function my_volume {
 	amixer get Master  | grep -m 1 "Right:\|Left:" | cut -d ' ' -f 7 | tr -d '[]'
 }
 
+function my_window_width { 
+	xdotool getwindowfocus getwindowgeometry | grep 'Geometry:' | cut -d ' ' -f 4  | cut -d 'x' -f 1
+}
+
+function my_window_height { 
+	xdotool getwindowfocus getwindowgeometry | grep 'Geometry:' | cut -d ' ' -f 4  | cut -d 'x' -f 2
+}
