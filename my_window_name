@@ -3,7 +3,7 @@
 source my_functions
 source my_variables
 
-my_requirements 'my_dmenu' 'xdotool'
+my_requirements 'my_dmenu' 'xdotool' || exit 1
 
 name=$(cat /dev/null | my_dmenu -p "New window name:")
 

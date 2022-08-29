@@ -3,7 +3,7 @@
 source my_functions
 source my_variables
 
-my_requirements 'bspc' 'hostname' 'tint2' || exit
+my_requirements 'bspc' 'hostname' 'tint2' || exit 1
 
 config=$(my_config_for 'bar')
 

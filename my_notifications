@@ -3,7 +3,7 @@
 source my_functions
 source my_variables
 
-my_requirements 'dunst' || exit
+my_requirements 'dunst' || exit 1
 
 config=$(my_config_for 'notifications')
 

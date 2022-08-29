@@ -3,7 +3,7 @@
 source my_functions
 source my_variables
 
-my_requirements 'bspc' || exit
+my_requirements 'bspc' || exit 1
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0  
 

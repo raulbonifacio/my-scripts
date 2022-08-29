@@ -3,12 +3,11 @@
 source my_functions
 source my_variables
 
-my_requirements 'hsetroot' || exit
+my_requirements 'hsetroot' || exit 1
 
 if test "$wallpaper" = "None"
 then
 	hsetroot -solid "$my_inactive_bg" 2> /dev/null 1> /dev/null
 else
-	echo "$wallpaper"
 	hsetroot -solid "$my_inactive_bg" -cover "$wallpaper" 2> /dev/null 1> /dev/null
 fi

@@ -2,14 +2,32 @@
 
 source ~/.cache/wal/colors.sh
 
-white='#ffffff'
-black='#000000'
+background=${background:-\#091416}
+foreground=${foreground:-\#cfd0ba}
+cursor=${cursor:-\#cfd0ba}
+
+color0=${color0:-\#091416}
+color1=${color1:-\#A1A47D}
+color2=${color2:-\#799B85}
+color3=${color3:-\#7D9F88}
+color4=${color4:-\#7E9F88}
+color5=${color5:-\#879D81}
+color6=${color6:-\#95A483}
+color7=${color7:-\#cfd0ba}
+color8=${color8:-\#909182}
+color9=${color9:-\#A1A47D}
+color10=${color10:-\#799B85}
+color11=${color11:-\#7D9F88}
+color12=${color12:-\#7E9F88}
+color13=${color13:-\#879D81}
+color14=${color14:-\#95A483}
+color15=${color15:-\#cfd0ba}
 
 my_font='Terminus (TTF)'
 my_font_size=12
-my_active_bg=${background:-$black}
-my_active_fg=${color4:-$white}
-my_inactive_bg=${background:-$white}
-my_inactive_fg=${foreground:-$black}
-my_border_size=2
+my_active_bg=$background
+my_active_fg=$color4
+my_inactive_bg=$background
+my_inactive_fg=$foreground
+my_border_size=1
 my_padding_size=8

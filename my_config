@@ -1,5 +1,8 @@
 #!/bin/bash
 
+source my_functions
+source my_variables
+
 my_bspwm
 my_background
 my_keyboard_layouts
