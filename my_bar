@@ -131,7 +131,7 @@ taskbar_name_padding = 5
 taskbar_name_font_color = $my_inactive_fg 100
 taskbar_name_active_font_color = $my_inactive_fg 100
 taskbar_distribute_size = 0
-taskbar_sort_order = mru
+taskbar_sort_order = none
 task_align = center
 
 #-------------------------------------
