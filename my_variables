@@ -11,5 +11,5 @@ my_active_bg=${background:-$black}
 my_active_fg=${color4:-$white}
 my_inactive_bg=${background:-$white}
 my_inactive_fg=${foreground:-$black}
-my_border_size=1
+my_border_size=2
 my_padding_size=8

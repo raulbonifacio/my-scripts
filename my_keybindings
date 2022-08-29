@@ -55,11 +55,11 @@ alt + shift + {h,j,k,l}
 
 # Focus the next or previous node
 alt + {n,p}
-	bspc node -f {next,prev}.leaf
+	bspc node -f {next,prev}.local.leaf
 
 # Swap with the next or previous node 
 alt + shift + {n,p}
-	bspc node -s {next,prev}.leaf  --follow
+	bspc node -s {next,prev}.local.leaf --follow
 
 # Focus the specified desktop
 alt + {0-9}
