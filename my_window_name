@@ -1,0 +1,10 @@
+#!/bin/bash
+
+source my_functions
+source my_variables
+
+my_requirements 'xdotool'
+
+name=$(cat /dev/null | my_dmenu -p "New window name:")
+
+test $? -eq 0 && xdotool getwindowfocus set_window --name "$name"

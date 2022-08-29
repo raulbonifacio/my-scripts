@@ -19,6 +19,10 @@ alt + F1
 alt + g; r
 	my_dmenu_run
 
+# Rename my current window
+alt + g; n
+	my_window_name
+
 # Change my current theme
 alt + g; t
 	my_themes

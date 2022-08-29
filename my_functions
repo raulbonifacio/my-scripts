@@ -21,6 +21,12 @@ function my_config_for {
 	printf "%s\n" "$config"
 }
 
+function my_cache_for { 
+	local cache="/tmp/my_$1_cache"
+	test -e "$cache" || touch "$config"
+	printf "%s\n" "$cache"
+}
+
 function my_screen_width { 
 	xdpyinfo | grep "dimensions"  | cut -d " " -f 7  | cut -d "x" -f 1
 }
