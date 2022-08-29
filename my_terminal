@@ -209,8 +209,8 @@ colors:
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
   cursor:
-  #  text: CellBackground
-    cursor: $cursor
+    text: CellBackground
+    cursor: '$cursor'
 
   # Vi mode cursor colors
   #
@@ -378,16 +378,16 @@ colors:
   # When set to 'true', selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+cursor:
   # Cursor style
-  #style:
+  style:
     # Cursor shape
     #
     # Values for 'shape':
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    #shape: Block
+    shape: Underline
 
     # Cursor blinking state
     #
@@ -415,7 +415,7 @@ colors:
 
   # Thickness of the cursor relative to the cell width as floating point number
   # from '0.0' to '1.0'.
-  #thickness: 0.15
+  thickness: 0.25
 
 # Live config reload (changes require restart)
 live_config_reload: true
