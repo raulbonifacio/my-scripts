@@ -30,4 +30,4 @@ my_active_fg=$color4
 my_inactive_bg=$background
 my_inactive_fg=$foreground
 my_border_size=1
-my_padding_size=8
+my_padding_size=12

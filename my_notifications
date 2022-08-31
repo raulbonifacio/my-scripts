@@ -6,6 +6,7 @@ source my_variables
 my_requirements 'dunst' || exit 1
 
 config=$(my_config_for 'notifications')
+screen_size=$(my_screen_width)
 
 cat > "$config" <<EOF
 # See dunst(5) for all configuration options
@@ -34,13 +35,13 @@ cat > "$config" <<EOF
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-    width = 500
+	width = $(( $screen_size / 2 - $my_padding_size * 2 - $my_border_size * 2 ))
 
     # The maximum height of a single notification, excluding the frame.
-    height = 300
+	height = 600
 
     # Position the notification in the top right corner
-    origin = top-right
+    origin = center
 
     # Offset from the origin
     offset = ${my_padding_size}x${my_padding_size}
@@ -86,10 +87,10 @@ cat > "$config" <<EOF
     separator_height = $my_border_size
 
     # Padding between text and separator.
-    padding = 18
+    padding = 1 
 
     # Horizontal padding.
-    horizontal_padding = 18
+    horizontal_padding = 8
 
     # Padding between text and icon.
     text_icon_padding = 0
@@ -125,7 +126,7 @@ cat > "$config" <<EOF
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
-    line_height = 0
+    line_height = 5
 
     # Possible values are:
     # full: Allow a small subset of html markup in notifications:
@@ -161,7 +162,7 @@ cat > "$config" <<EOF
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "<b>%s</b>\n%b"
+    format = "%s\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
@@ -220,7 +221,7 @@ cat > "$config" <<EOF
     ### Misc/Advanced ###
 
     # dmenu path.
-    dmenu = /usr/bin/dmenu -p dunst:
+    dmenu = my_dmenu -p dunst:
 
     # Browser for opening urls in context menu.
     browser = /usr/bin/xdg-open
@@ -285,8 +286,8 @@ cat > "$config" <<EOF
     # These values can be strung together for each mouse event, and
     # will be executed in sequence.
     mouse_left_click = close_current
-    mouse_middle_click = do_action, close_current
-    mouse_right_click = close_all
+    mouse_middle_click = close_all
+    mouse_right_click = do_action
 
 # Experimental features that may or may not work correctly. Do not expect them
 # to have a consistent behaviour across releases.
