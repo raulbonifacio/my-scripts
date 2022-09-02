@@ -35,13 +35,13 @@ cat > "$config" <<EOF
     # dynamic width from 0 to 300
     # width = (0, 300)
     # constant width of 300
-	width = $(( $screen_size / 2 - $my_padding_size * 2 - $my_border_size * 2 ))
+	width = 600
 
     # The maximum height of a single notification, excluding the frame.
 	height = 600
 
     # Position the notification in the top right corner
-    origin = center
+    origin = top-right
 
     # Offset from the origin
     offset = ${my_padding_size}x${my_padding_size}
@@ -87,7 +87,7 @@ cat > "$config" <<EOF
     separator_height = $my_border_size
 
     # Padding between text and separator.
-    padding = 1 
+    padding = $my_padding_size 
 
     # Horizontal padding.
     horizontal_padding = 8
@@ -162,7 +162,7 @@ cat > "$config" <<EOF
     #   %n  progress value if set without any extra characters
     #   %%  Literal %
     # Markup is allowed
-    format = "%s\n%b"
+    format = "<b>%s</b>\n%b"
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
