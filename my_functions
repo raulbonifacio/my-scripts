@@ -1,13 +1,13 @@
 #!/bin/bash
 
-function my_requirements { 
+function my_requirements {
 
 	local missing=0
 
 	for requirement in "$@"
 	do
-		command -v "$requirement" > /dev/null || { 
-			printf "'%s' is missing.\n" "$requirement" 
+		command -v "$requirement" > /dev/null || {
+			printf "'%s' is missing.\n" "$requirement"
 			missing=1
 		}
 	done
@@ -15,34 +15,34 @@ function my_requirements {
 	return "$missing"
 }
 
-function my_config_for { 
+function my_config_for {
 	local config="/tmp/my_$1_config"
 	test -e "$config" || touch "$config"
 	printf "%s\n" "$config"
 }
 
-function my_cache_for { 
+function my_cache_for {
 	local cache="/tmp/my_$1_cache"
 	test -e "$cache" || touch "$config"
 	printf "%s\n" "$cache"
 }
 
-function my_screen_width { 
-	xdpyinfo | grep "dimensions"  | cut -d " " -f 7  | cut -d "x" -f 1
+function my_screen_width {
+	xdpyinfo | grep "dimensions" | cut -d " " -f 7 | cut -d "x" -f 1
 }
 
-function my_screen_height { 
-	xdpyinfo | grep "dimensions"  | cut -d " " -f 7  | cut -d "x" -f 1
+function my_screen_height {
+	xdpyinfo | grep "dimensions" | cut -d " " -f 7 | cut -d "x" -f 1
 }
 
-function my_volume { 
-	amixer get Master  | grep -m 1 "Right:\|Left:" | cut -d ' ' -f 7 | tr -d '[]'
+function my_volume {
+	amixer get Master | grep -m 1 "Right:\|Left:" | cut -d ' ' -f 7 | tr -d '[]'
 }
 
-function my_window_width { 
-	xdotool getwindowfocus getwindowgeometry | grep 'Geometry:' | cut -d ' ' -f 4  | cut -d 'x' -f 1
+function my_window_width {
+	xdotool getwindowfocus getwindowgeometry | grep 'Geometry:' | cut -d ' ' -f 4 | cut -d 'x' -f 1
 }
 
-function my_window_height { 
-	xdotool getwindowfocus getwindowgeometry | grep 'Geometry:' | cut -d ' ' -f 4  | cut -d 'x' -f 2
+function my_window_height {
+	xdotool getwindowfocus getwindowgeometry | grep 'Geometry:' | cut -d ' ' -f 4 | cut -d 'x' -f 2
 }

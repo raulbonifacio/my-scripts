@@ -98,7 +98,7 @@ fade-in-step = 0.08;
 fade-out-step = 0.08;
 
 # The time between steps in fade step, in milliseconds. (> 0, defaults to 10)
-# fade-delta = 200 
+# fade-delta = 200
 
 # Specify a list of conditions of windows that should not be faded.
 # fade-exclude = []
@@ -160,7 +160,7 @@ opacity-rule = [
 # Sets the radius of rounded window corners. When > 0, the compositor will
 # round the corners of windows. Does not interact well with
 # 'transparent-clipping'.
-corner-radius = 0  
+corner-radius = 0
 
 # Exclude conditions for rounded corners.
 rounded-corners-exclude = [
@@ -435,5 +435,5 @@ if pgrep picom > /dev/null
 then
 	pgrep picom | xargs kill -s 10
 else
-	picom --experimental-backends --config "$config" & 
+	picom --experimental-backends --config "$config" &
 fi

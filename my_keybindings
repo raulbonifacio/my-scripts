@@ -27,8 +27,8 @@ $prefix; shift + t
 	my_themes
 
 # Print screen region
-$prefix; shift + p 
-	scrot -s -f - | xclip -selection clipboard -t image/png -i 
+$prefix; shift + p
+	scrot -s -f - | xclip -selection clipboard -t image/png -i
 
 # Launch terminal
 $prefix; t
@@ -46,7 +46,7 @@ $prefix; shift + {h,j,k,l}
 $prefix; {n,p}
 	bspc node -f {next,prev}.local.leaf
 
-# Swap with the next or previous node 
+# Swap with the next or previous node
 $prefix; shift + {n,p}
 	bspc node -s {next,prev}.local.leaf --follow
 
@@ -54,8 +54,8 @@ $prefix; shift + {n,p}
 $prefix; {0-9}
 	bspc desktop -f {0-9}
 
-# Set layout to monocle
-$prefix; shift + m
+# Toggle layouts
+$prefix; m
 	bspc desktop -l next
 
 # Send the focused node to the specified desktop

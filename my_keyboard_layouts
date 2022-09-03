@@ -4,6 +4,6 @@ source my_functions
 
 my_requirements 'setxkbmap' || exit 1
 
-# See: 
+# See:
 # $ man xkeyboard-config
 setxkbmap -layout "us,br" -option grp:win_space_toggle &

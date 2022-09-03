@@ -17,7 +17,7 @@ cat > "$config" <<EOF
     # Which monitor should the notifications be displayed on.
     monitor = 0
 
-    # Display notification on focused monitor.  Possible modes are:
+    # Display notification on focused monitor. Possible modes are:
     #   mouse: follow mouse pointer
     #   keyboard: follow window with keyboard focus
     #   none: don't follow anything
@@ -87,7 +87,7 @@ cat > "$config" <<EOF
     separator_height = $my_border_size
 
     # Padding between text and separator.
-    padding = $my_padding_size 
+    padding = $my_padding_size
 
     # Horizontal padding.
     horizontal_padding = 8
@@ -124,7 +124,7 @@ cat > "$config" <<EOF
 
     font = $my_font $my_font_size
 
-    # The spacing between lines.  If the height is smaller than the
+    # The spacing between lines. If the height is smaller than the
     # font height, it will get raised to the font height.
     line_height = 5
 
@@ -152,7 +152,7 @@ cat > "$config" <<EOF
     # regardless of what this is set to.
     markup = full
 
-    # The format of the message.  Possible variables are:
+    # The format of the message. Possible variables are:
     #   %a  appname
     #   %s  summary
     #   %b  body

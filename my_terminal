@@ -58,7 +58,7 @@ window:
   # by DPI and the specified value is always added at both opposing sides.
   padding:
     x: $my_padding_size
-    y: $my_padding_size 
+    y: $my_padding_size
 
   # Spread additional padding evenly around the terminal content.
   #dynamic_padding: false
@@ -863,4 +863,4 @@ live_config_reload: true
   #print_events: false
 EOF
 
-alacritty --config-file  "$config"
+alacritty --config-file "$config"

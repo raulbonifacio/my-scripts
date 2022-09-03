@@ -5,8 +5,8 @@ source my_variables
 
 my_requirements 'my_dmenu' 'my_config' 'wal' || exit 1
 
-function theme_list { 
-	wal --theme  | grep '-' | sort -u | cut -d ' ' -f 3 | nl -s ' ' -n 'rz' -v 0 
+function theme_list {
+	wal --theme | grep '-' | sort -u | cut -d ' ' -f 3 | nl -s ' ' -n 'rz' -v 0
 }
 
 theme_index=0
