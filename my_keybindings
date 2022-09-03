@@ -6,32 +6,67 @@ source my_variables
 my_requirements 'sxhkd' || exit 1
 
 config=$(my_config_for 'keybindings')
+prefix="alt + b"
 
 cat > "$config" <<EOF
 
-#						  GENERAL KEYBINDINGS
-
 # Reload sxhkd config
-alt + F1
+$prefix; shift + R
 	pgrep sxhkd | xargs kill -s 10 | notify-send "Just reloaded sxhkd"
 
-# Open application finder collapsed
-alt + g; r
+# Run application
+$prefix; r
 	my_dmenu_run
 
-# Rename my current window
-alt + g; n
+# Change window name
+$prefix; shift + n
 	my_window_name
 
-# Change my current theme
-alt + g; t
+# Change theme
+$prefix; shift + t
 	my_themes
 
-alt + g; p 
+# Print screen region
+$prefix; shift + p 
 	scrot -s -f - | xclip -selection clipboard -t image/png -i 
 
+# Launch terminal
+$prefix; t
+	my_terminal
 
-#								 VOLUME CONTROL
+# Focus the node do the specified direction
+$prefix; {h,j,k,l}
+	bspc node -f {west, south, north, east}.leaf
+
+# Move the node to the specified direction
+$prefix; shift + {h,j,k,l}
+	bspc node -s {west, south, north, east}.leaf --follow
+
+	# Focus the next or previous node
+$prefix; {n,p}
+	bspc node -f {next,prev}.local.leaf
+
+# Swap with the next or previous node 
+$prefix; shift + {n,p}
+	bspc node -s {next,prev}.local.leaf --follow
+
+# Focus the specified desktop
+$prefix; {0-9}
+	bspc desktop -f {0-9}
+
+# Set layout to monocle
+$prefix; shift + m
+	bspc desktop -l next
+
+# Send the focused node to the specified desktop
+$prefix; shift + {1-9}
+	bspc node -d {1-9} --follow
+
+$prefix; shift + c
+	bspc node --close
+
+$prefix; + shift + q
+	bspc quit
 
 # Toggle mute
 XF86AudioMute
@@ -45,48 +80,8 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
 	amixer -q set Master 5%-
 
-
-#							   BSPWM KEYBINDINGS 
-
-# Focus the node do the specified direction
-alt + {h,j,k,l}
-	bspc node -f {west, south, north, east}.leaf
-
-# Move the node to the specified direction
-alt + shift + {h,j,k,l}
-	bspc node -s {west, south, north, east}.leaf --follow
-
-
-# Focus the next or previous node
-alt + {n,p}
-	bspc node -f {next,prev}.local.leaf
-
-# Swap with the next or previous node 
-alt + shift + {n,p}
-	bspc node -s {next,prev}.local.leaf --follow
-
-# Focus the specified desktop
-alt + {0-9}
-	bspc desktop -f {0-9}
-
-# Send the focused node to the specified desktop
-alt + shift + {1-9}
-	bspc node -d {1-9} --follow
-
-alt + shift + c
-	bspc node --close
-
-# restart 
-alt + w; r
-	bspc wm -r
-
-# quit
-alt + w; q
-	bspc quit
-
-#Move, Change, Resize, Swap, Send
-
 EOF
+
 
 if pgrep sxhkd > /dev/null
 then
