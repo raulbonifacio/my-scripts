@@ -6,7 +6,6 @@ source my_variables
 my_requirements 'dunst' || exit 1
 
 config=$(my_config_for 'notifications')
-screen_size=$(my_screen_width)
 
 cat > "$config" <<EOF
 # See dunst(5) for all configuration options

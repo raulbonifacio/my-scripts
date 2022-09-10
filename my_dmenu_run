@@ -11,7 +11,7 @@ dmenu_run \
 	-p "Run:" \
 	-x "$my_padding_size" \
 	-y "$my_padding_size" \
-	-z "$(($screen_width - $my_padding_size * 2 ))" \
+	-z "$(( screen_width - my_padding_size * 2 ))" \
 	-fn "$my_font-$my_font_size" \
 	-nf "$my_inactive_fg" \
 	-nb "$my_inactive_bg" \

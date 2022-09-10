@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 
 source my_functions
 source my_variables

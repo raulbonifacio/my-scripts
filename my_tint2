@@ -86,8 +86,8 @@ border_color_pressed = #000000 100
 #-------------------------------------
 # Panel
 panel_items = TFCE
-panel_size = 100% $(( $my_font_size + $my_border_size * 2 + 7 ))
-panel_margin = $(( $my_padding_size * 2 )) $(( $my_padding_size ))
+panel_size = 100% $(( my_font_size + my_border_size * 2 + 7 ))
+panel_margin = $(( my_padding_size * 2 )) $(( my_padding_size ))
 panel_padding = 0 0
 panel_background_id = 1
 wm_menu = 1
