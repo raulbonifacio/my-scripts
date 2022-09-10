@@ -5,6 +5,6 @@ source my_variables
 
 my_requirements 'my_dmenu' 'xdotool' || exit 1
 
-name=$(cat /dev/null | my_dmenu -p "New window name:")
+name=$(my_dmenu -p "New window name:" < /dev/null)
 
 test $? -eq 0 && xdotool getwindowfocus set_window --name "$name"
