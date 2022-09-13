@@ -6,20 +6,23 @@ source my_variables
 my_requirements 'sxhkd' || exit 1
 
 config=$(my_config_for 'keybindings')
-prefix="alt + b"
+prefix="alt + z"
 
 cat > "$config" <<EOF
 
 # Reload sxhkd config
 $prefix; shift + R
 	pgrep sxhkd | xargs kill -s 10 | notify-send "Just reloaded sxhkd"
+# Run application
+$prefix; shift + S
+	systemctl suspend
 
 # Run application
 $prefix; r
 	my_dmenu_run
 
 # Change window name
-$prefix; shift + n
+$prefix; shift + a 
 	my_window_name
 
 # Change theme
