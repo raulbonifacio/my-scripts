@@ -6,7 +6,7 @@ source my_variables
 my_requirements 'sxhkd' || exit 1
 
 config=$(my_config_for 'keybindings')
-prefix="alt + z"
+prefix="alt + b"
 
 cat > "$config" <<EOF
 
